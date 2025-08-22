@@ -15,10 +15,13 @@ function getHumanChoice() {
 }
 
 
-let humanScore = 0;
-let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
+function playGame() {
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(humanChoice, computerChoice) {
     
     //Human wins
 
@@ -30,7 +33,7 @@ function playRound(humanChoice, computerChoice) {
         alert("You win! Rock beats scissors.")
     } 
     
-    /* Human loses */
+    // Human loses
 
     else if (humanChoice === "paper" && computerChoice === "scissors") {
         alert("You lose! Scissors beats paper.")
@@ -50,3 +53,10 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
+}
+
+let roundCounter = 0;
+while (roundCounter <= 4) {
+    playGame();
+    roundCounter += 1;
+} 
